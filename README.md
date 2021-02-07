@@ -31,15 +31,15 @@ Turn over, the player1 must type first and second number that typed and plus ano
 ## User Stories
 - The game starts when the user clicks the start button
 - Once the games start, the user will be able to type the numbers. There will be a remaining time bar (probably 5~10 seconds/TBU)
-- When the one player types one number and hits enter and the the message will display as "it's next player's turn" and the game continues....
+- When the player types one number and hits enter and the the message will display as "it's next player's turn" and the game continues....
 - When one of the players types the incorrect numbers, the game will just stop unless the user clicks the "TRY AGAIN" button
 - Button
     - TRY AGAIN: When the game has the winner, the button will re-start the game
     - MAIN: Going back to the main page
 
 ## MVP Checklist
-1. Get the HTML and basic CSS/ Remaining time functionalities done by Monday or Tuesday 
-2. User input functinalities done by Wednesday and find bugs by Friday(or Saturday)
+1. Get the HTML and basic CSS/ 'Remaining time' functionalities done by Monday or Tuesday 
+2. User input functinalities and find bugs by Friday(or Saturday)
 3. Mostly working on the styling and designing the project on Saturday and Sunday
 
 ## Stretch goals
