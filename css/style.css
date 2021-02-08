@@ -11,14 +11,14 @@ body {
 
 #container {
     border: 1px solid black;
+    box-shadow: 5px 10px 8px 10px #888888;
     width: 1200px;
     height: 700px;
     margin: auto;
-
-
+    position: relative;
 }
 
-#gameTitle {
+#gameTitleContainer {
     font-size: 38px;
     margin-top: 20px;
     display: flex;
@@ -61,14 +61,12 @@ p {
     align-items: center;
     color: white;
     padding: 40px;
-    margin-right: 100px;
-    margin-top: 10px;
-    
+    margin-right: 100px; 
 }
 
-
-#madeBy {
-    float: right;
+.madeBy {
+    position: flex;
+    margin-top: 35px;
     margin-right: 20px;
-    margin-top: 40px;
+    text-align: right;
 }
