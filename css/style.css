@@ -1,0 +1,74 @@
+html {
+    height: 100%
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    border: 1px solid black;
+    width: 1200px;
+    height: 700px;
+    margin: auto;
+
+
+}
+
+#gameTitle {
+    font-size: 38px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rules {
+    margin-top: 125px;
+    margin-left: 50px;
+}
+
+#example {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    margin: 0px;
+    margin-left: 40px;
+    padding: 0;
+}
+
+#startBtn {
+    font-size: 25px;
+    cursor: pointer;
+    background-color: rgb(106, 159, 216);
+    border: none;
+    border-radius: 75px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 40px;
+    margin-right: 100px;
+    margin-top: 10px;
+    
+}
+
+
+#madeBy {
+    float: right;
+    margin-right: 20px;
+    margin-top: 40px;
+}
