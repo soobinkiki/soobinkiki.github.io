@@ -26,6 +26,14 @@ body {
     align-items: center;
 }
 
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+
+
 #rules {
     margin-top: 125px;
     margin-left: 50px;
@@ -37,6 +45,8 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+
 
 h2 {
     font-size: 30px;
@@ -51,7 +61,7 @@ p {
 #startBtn {
     font-size: 25px;
     cursor: pointer;
-    background-color: rgb(106, 159, 216);
+    background-color: rgb(232, 250, 255);
     border: none;
     border-radius: 75px;
     width: 150px;
@@ -59,7 +69,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(30, 31, 30);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
     padding: 40px;
     margin-right: 100px; 
 }
@@ -69,4 +80,22 @@ p {
     margin-top: 35px;
     margin-right: 20px;
     text-align: right;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 0.75;
+}
+
+#tryAgainBtn {
+    margin-right: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#goBackBtn {
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
 }
