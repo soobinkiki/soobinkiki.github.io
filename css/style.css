@@ -1,14 +1,12 @@
 html {
     height: 100%
 }
-
 body {
     min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 #container {
     border: 1px solid black;
     box-shadow: 5px 10px 8px 10px #888888;
@@ -17,7 +15,6 @@ body {
     margin: auto;
     position: relative;
 }
-
 #gameTitleContainer {
     font-size: 38px;
     margin-top: 20px;
@@ -25,44 +22,34 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-#buttons {
+#menuButtons {
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
 }
-
-
-
 #rules {
     margin-top: 125px;
     margin-left: 50px;
 }
-
 #example {
     margin-top: 20px;
     margin-left: 50px;
     display: flex;
     justify-content: space-between;
 }
-
-
-
 h2 {
     font-size: 30px;
 }
-
 p {
     margin: 0px;
     margin-left: 40px;
     padding: 0;
 }
-
 #startBtn {
     font-size: 25px;
     cursor: pointer;
-    background-color: rgb(232, 250, 255);
-    border: none;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
     border-radius: 75px;
     width: 150px;
     height: 150px;
@@ -74,28 +61,57 @@ p {
     padding: 40px;
     margin-right: 100px; 
 }
-
 .madeBy {
     position: flex;
     margin-top: 35px;
     margin-right: 20px;
     text-align: right;
 }
-
 input::placeholder {
     color: white;
     opacity: 0.75;
 }
-
 #tryAgainBtn {
     margin-right: 15px;
     background: white;
     cursor: pointer;
     border-radius: 6px;
 }
-
 #goBackBtn {
     background: white;
     cursor: pointer;
     border-radius: 6px;
+}
+.typeArea {
+    font-size: 65px;
+    width: 1000px;
+    margin: 7% 0 0 7%;
+    background: black;
+    color: white;
+    text-align: center;
+    border: 1px solid black;
+    outline: none;
+}
+#clearBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 6px;
+    margin-top: 25px;
+    margin-left: 44%;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#display {
+    width: 450px;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 120px;
 }
