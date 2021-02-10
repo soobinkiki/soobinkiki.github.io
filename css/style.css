@@ -85,7 +85,7 @@ input::placeholder {
 .typeArea {
     font-size: 65px;
     width: 1000px;
-    margin: 7% 0 0 7%;
+    margin: 6% 0 0 7.5%;
     background: black;
     color: white;
     text-align: center;
@@ -99,13 +99,14 @@ input::placeholder {
     margin: auto;
     padding: 6px;
     margin-top: 25px;
-    margin-left: 44%;
+    margin-left: 44.5%;
     background: black;
     color: white;
     border: 1px solid white;
     border-radius: 6px;
     cursor: pointer;
 }
+
 #display {
     width: 450px;
     height: 40px;
@@ -113,5 +114,29 @@ input::placeholder {
     text-align: center;
     background: rgb(255, 255, 255);
     margin: auto;
-    margin-top: 120px;
+    margin-top: 48px;
+    margin-bottom: 50px;
+}
+
+.timer {
+    height: 15px;
+    width: 1080px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(64, 255, 0), rgb(24, 24, 24));
+    animation-name: timer;
+    animation-duration: 6s;
+    animation-delay: 6s;
+}
+@keyframes timer {
+    from {
+        width: 90%;
+    }
+    
+    to {
+        width: 10%;
+    }
+
 }
