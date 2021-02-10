@@ -94,7 +94,7 @@ input::placeholder {
 }
 
 #display {
-    width: 450px;
+    width: 850px;
     height: 40px;
     font-size: 30px;
     text-align: center;
@@ -120,9 +120,8 @@ input::placeholder {
     from {
         width: 90%;
     }
-    
     to {
-        width: 10%;
+        width: 0%;
     }
 
 }

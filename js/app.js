@@ -12,7 +12,9 @@ let resultStore = "";
 let player = "1";
 
 const styleChange = () => {
-    startBtn.style.display = 'none'; rules.style.display = 'none'; example.style.display = 'none'
+    startBtn.style.display = 'none'
+    rules.style.display = 'none'
+    example.style.display = 'none'
 
     mainTitle.style.fontSize = "20px"
     mainTitle.style.marginRight = "20px"
@@ -65,7 +67,7 @@ const timeOut = () => {
 const resultNum = () => {
     for (let i=0; i < (typeArea.value.length) - 1; i++) {
         if (resultStore[i] != typeArea.value[i]) {
-            display.innerText = `WRONG NUMBERS! Player${player} you lost! click 'START' to play again`
+            display.innerText = `WRONG NUMBERS! \nPlayer ${player} you lost! click 'START' to play again`
             typeArea.setAttribute("disabled", "disabled")
             return
         } 
@@ -74,14 +76,11 @@ const resultNum = () => {
 
     if (player === "2") {
         player = "1"
-        console.log(player);
     } else if (player === "1") {
         player = "2"
-        console.log(player);
-
     }
     typeArea.value = "";
-    display.innerText = `Correct! player${player} It's your turn`
+    display.innerText = `CORRECT! player${player} It's your turn`
 }
 
 typeArea.addEventListener('keyup', (event) => {
@@ -92,7 +91,7 @@ typeArea.addEventListener('keyup', (event) => {
 
 startBtn.addEventListener('click', () => {  // first page start button
     styleChange()
-    setTimeout( () => {display.innerText = "Player1 It's your turn"}, 6000)
+    setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
 })
 
 const tryAgain = () => { //start button
@@ -100,19 +99,12 @@ const tryAgain = () => { //start button
         typeArea.removeAttribute("disabled", "disabled")
         display.innerText = "";
         timeOut()
-        setTimeout( () => {display.innerText = "Player1 It's your turn"}, 6000)
+        setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
         typeArea.value = "";
         resultStore = "";
     })
 }
 
-mainBtn.addEventListener('click', () => { // main button
-    startBtn.style.display = "block"
-    rules.style.display = "block"
-    example.style.display = "block"
-    tryAgainBtn.style.display = "none"
-    mainBtn.style.display = "none"
-    answerBox.style.display = "none"
-    typeArea.style.display = "none"
-    display.style.display = "none"
-})
+// mainBtn.addEventListener('click', () => { // main button
+//    
+// })
