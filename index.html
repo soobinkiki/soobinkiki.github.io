@@ -13,8 +13,10 @@
         <div id="gameTitleContainer">
             <h1 id="mainTitle">Numbers Memory Game</h1>
         </div>
-        <div id="menuButtons"></div>
-        <div class="resultDisplay"></div>
+        <div class="hide">
+            <div id="menuButtons"></div>
+            <div class="resultDisplay"></div>
+        </div>   
         <div id="rules">
             <h2>HOW TO PLAY</h2>
             <ul>
@@ -23,7 +25,7 @@
                 <li>Type the numbers and HIT ENTER!</li>
             </ul>
         </div>
-        <div id="example">
+        <div class="temp" id="example">
             <div>
                 <h2>EXAMPLE (at each turn)</h2>
                 <p>Player1 types 0</p>
@@ -31,12 +33,15 @@
                 <p>Player1 types 096</p>   
                 <p>Player2 types 0962</p>
             </div>
-            <div><button id="startBtn">START</button></div>
+            <div>
+                <button id="startBtn">START</button>
+            </div>
         </div>
-        
-        <div id="answer-Box"></div>
-        <div class="madeBy">made by Justin Park</div>
+        <div class="hide">
+            <div id="answer-Box" style="display: none;"></div>
+            <div id="timeBar"></div>
+        </div>        
+            <div class="madeBy">made by Justin Park</div>          
     </div>
-    <div></div>
 </body>
 </html>

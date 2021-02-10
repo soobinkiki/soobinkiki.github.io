@@ -103,6 +103,12 @@ input::placeholder {
     margin-top: 48px;
     margin-bottom: 50px;
 }
+#answer-Box {
+    margin-top: 30px;
+    background: black;
+    width: 1200px;
+    height: 240px;
+}
 
 .timer {
     height: 15px;
@@ -123,5 +129,4 @@ input::placeholder {
     to {
         width: 0%;
     }
-
 }

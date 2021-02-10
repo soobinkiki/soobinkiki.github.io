@@ -8,19 +8,11 @@ let mainTitle = document.querySelector("#mainTitle")
 let answerBox = document.querySelector("#answer-Box")
 let typeArea = document.createElement('input')
 let resultDisplay = document.querySelector(".resultDisplay")
+let mainPageHide = document.querySelector(".mainHide")
 let resultStore = "";
 let player = "1";
 
-const styleChange = () => {
-    startBtn.style.display = 'none'
-    rules.style.display = 'none'
-    example.style.display = 'none'
-
-    mainTitle.style.fontSize = "20px"
-    mainTitle.style.marginRight = "20px"
-    gameTitleContainer.style.display = "inline"
-    gameTitleContainer.style.textAlign = "end"
-
+const buttonCreated = () => {
     var tryAgainBtn = document.createElement('button')
     buttonContainer.append(tryAgainBtn)
     tryAgainBtn.innerText = "START"
@@ -29,23 +21,42 @@ const styleChange = () => {
     buttonContainer.append(mainBtn)
     mainBtn.innerText = "MAIN"
     mainBtn.setAttribute("id", "goBackBtn")
-   
+
+    // mainBtn.addEventListener('click', () => { // main button
+    //     let hide = document.querySelector(".hide")
+    //     let temp = document.querySelector(".temp")
+        
+    //     hide.style.display = "none"
+    //     answerBox.style.display = "none"
+    //     // startBtn.style.display = 'block'
+    //     rules.style.display = 'block'
+    //     temp.style.display = 'block'
+    //     console.log("clicked");
+    // })
+}
+
+const styleChange = () => {
+    startBtn.style.display = 'none'
+    rules.style.display = 'none'
+    example.style.display = 'none'
+    
+    mainTitle.style.fontSize = "20px"
+    mainTitle.style.marginRight = "20px"
+    gameTitleContainer.style.display = "inline"
+    gameTitleContainer.style.textAlign = "end"
+    
+    buttonCreated()
     var display = document.createElement('p')
     resultDisplay.append(display)
     display.setAttribute("id", "display")
     display.innerText = "";
-
+    
     let timeRemaining = document.createElement("div")
     timeRemaining.setAttribute("class", "timer")
     resultDisplay.append(timeRemaining)
-    
     answerBox.append(typeArea)
-    answerBox.style.marginTop = "30px"
-    answerBox.style.background = "black"
-    answerBox.style.width = "1200px"
-    answerBox.style.height = "240px"
     
-    myName.style.marginTop = "160px"
+    myName.style.marginTop = "173px"
     
     typeArea.setAttribute("type", "text", "placeholder", "ARE YOU READY?")
     typeArea.setAttribute("class", "typeArea", "id", "clear")   
@@ -86,10 +97,13 @@ const resultNum = () => {
 typeArea.addEventListener('keyup', (event) => {
     if (event.key === "Enter") {
         resultNum()
+        // let timeBar = document.querySelector("#timeBar")
+        
     }
 })
 
 startBtn.addEventListener('click', () => {  // first page start button
+    answerBox.style.display = "block"
     styleChange()
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
 })
@@ -105,6 +119,4 @@ const tryAgain = () => { //start button
     })
 }
 
-// mainBtn.addEventListener('click', () => { // main button
-//    
-// })
+
