@@ -83,7 +83,7 @@ input::placeholder {
     border-radius: 6px;
 }
 .typeArea {
-    font-size: 65px;
+    font-size: 85px;
     width: 1000px;
     margin: 6% 0 0 7.5%;
     background: black;
@@ -91,20 +91,6 @@ input::placeholder {
     text-align: center;
     border: 1px solid black;
     outline: none;
-}
-#clearBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: 6px;
-    margin-top: 25px;
-    margin-left: 44.5%;
-    background: black;
-    color: white;
-    border: 1px solid white;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
 #display {

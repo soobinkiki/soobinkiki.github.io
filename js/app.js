@@ -27,9 +27,6 @@ const styleChange = () => {
     buttonContainer.append(mainBtn)
     mainBtn.innerText = "MAIN"
     mainBtn.setAttribute("id", "goBackBtn")
-    var clearBtn = document.createElement('button')
-    clearBtn.innerText = "ENTER / CLEAR"
-    clearBtn.setAttribute("id", "clearBtn")
    
     var display = document.createElement('p')
     resultDisplay.append(display)
@@ -41,7 +38,6 @@ const styleChange = () => {
     resultDisplay.append(timeRemaining)
     
     answerBox.append(typeArea)
-    answerBox.append(clearBtn)
     answerBox.style.marginTop = "30px"
     answerBox.style.background = "black"
     answerBox.style.width = "1200px"
@@ -61,7 +57,7 @@ const timeOut = () => {
         setTimeout( () => {typeArea.placeholder = "2"}, 3000);
         setTimeout( () => {typeArea.placeholder = "1"}, 4000);
         setTimeout( () => {typeArea.placeholder = "START"}, 5000);
-        setTimeout( () => {typeArea.placeholder = "ENTER NUMBERS"}, 6000);
+        setTimeout( () => {typeArea.placeholder = "PLEASE ENTER"}, 6000);
         setTimeout( () => {typeArea.removeAttribute("disabled", "disabled")}, 6000);
     }
 }
@@ -71,7 +67,6 @@ const resultNum = () => {
         if (resultStore[i] != typeArea.value[i]) {
             display.innerText = `WRONG NUMBERS! Player${player} you lost! click 'START' to play again`
             typeArea.setAttribute("disabled", "disabled")
-            clearBtn.disabled = true
             return
         } 
     }
@@ -87,7 +82,6 @@ const resultNum = () => {
     }
     typeArea.value = "";
     display.innerText = `Correct! player${player} It's your turn`
-
 }
 
 typeArea.addEventListener('keyup', (event) => {
@@ -99,17 +93,11 @@ typeArea.addEventListener('keyup', (event) => {
 startBtn.addEventListener('click', () => {  // first page start button
     styleChange()
     setTimeout( () => {display.innerText = "Player1 It's your turn"}, 6000)
-    clearBtn.addEventListener('click', () => {
-        typeArea.value = '';
-        console.log(resultStore);
-
-    })
 })
 
 const tryAgain = () => { //start button
     tryAgainBtn.addEventListener('click', () => {
         typeArea.removeAttribute("disabled", "disabled")
-        clearBtn.disabled = false;
         display.innerText = "";
         timeOut()
         setTimeout( () => {display.innerText = "Player1 It's your turn"}, 6000)
@@ -118,19 +106,13 @@ const tryAgain = () => { //start button
     })
 }
 
-var mainBtn = document.createElement('button')
 mainBtn.addEventListener('click', () => { // main button
-    styleChange().display = "none"
-    // startBtn.style.display = "block"
-    // rules.style.display = "block"
-    // example.style.display = "block"
-    // tryAgainBtn.style.display = "none"
-    // mainBtn.style.display = "none"
-    // answerBox.style.display = "none"
-    // typeArea.style.display = "none"
-    // display.style.display = "none"
+    startBtn.style.display = "block"
+    rules.style.display = "block"
+    example.style.display = "block"
+    tryAgainBtn.style.display = "none"
+    mainBtn.style.display = "none"
+    answerBox.style.display = "none"
+    typeArea.style.display = "none"
+    display.style.display = "none"
 })
-
-const timeRemaining = () => {  // time remaining bar
-
-}
