@@ -78,11 +78,8 @@ const resultNum = () => {
             display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
             typeArea.setAttribute("disabled", "disabled")
             let timeRemaining = document.createElement("div")
-            let timerWithDuration = document.querySelector(".timer")
-            timerWithDuration.remove()
-            timeRemaining.classList.add("timer")
             resultDisplay.append(timeRemaining)
-            timerWithDuration.style.removeProperty(animationDuration)
+            document.querySelector(".timer").style.animationDuration = "0s"
             return
         } 
     }

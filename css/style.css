@@ -1,5 +1,8 @@
 html {
-    height: 100%
+    height: 100%;
+    background-image: url("../images/Main_background.jpg");
+    background-size: cover;
+    background-repeat: none;
 }
 body {
     min-height: 100%;
@@ -9,7 +12,10 @@ body {
 }
 #container {
     border: 1px solid black;
-    box-shadow: 5px 10px 8px 10px #888888;
+    box-shadow: 0 0 5px 5px #2a2929;
+    background-color: rgba(221, 231, 240, 0.688);
+    background-size: cover;
+    background-repeat: none;
     width: 1200px;
     height: 700px;
     margin: auto;
@@ -48,8 +54,8 @@ p {
 #startBtn {
     font-size: 25px;
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.229);
+    border: none;
     border-radius: 75px;
     width: 150px;
     height: 150px;
@@ -94,7 +100,7 @@ input::placeholder {
     font-size: 85px;
     width: 1000px;
     margin: 6% 0 0 7.5%;
-    background: black;
+    background: rgba(0, 0, 0, 0.818);
     color: white;
     text-align: center;
     border: 1px solid black;
@@ -106,7 +112,7 @@ input::placeholder {
     height: 40px;
     font-size: 30px;
     text-align: center;
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255. 0.01);
     margin: auto;
     margin-top: 48px;
     margin-bottom: 50px;
@@ -114,7 +120,7 @@ input::placeholder {
 
 #answer-Box {
     margin-top: 30px;
-    background: black;
+    background: rgba(0, 0, 0, 0.818);
     width: 1200px;
     height: 240px;
 }
@@ -128,19 +134,26 @@ input::placeholder {
     align-items: center;
     background: linear-gradient(to bottom, rgb(64, 255, 0), rgb(24, 24, 24));
     animation-name: timer;
-    animation-duration: 6s;
+    animation-duration: 10s;
+
 }
+
 .timerDelay {
     animation-delay: 6s;
 }
+
 @keyframes timer {
     from {
         width: 66%;
     }
     50% {
-        color: orange;
+        background: linear-gradient(to bottom, rgb(199, 240, 33), rgb(24, 24, 24));
+    }
+    60% {
+        background: linear-gradient(to bottom, rgb(249, 169, 22), rgb(24, 24, 24));
     }
     to {
+        background: linear-gradient(to bottom, rgb(255, 59, 45), rgb(24, 24, 24));
         width: 0%;
     }
 }
