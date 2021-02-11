@@ -10,49 +10,29 @@ let typeArea = document.createElement('input')
 let resultDisplay = document.querySelector(".resultDisplay")
 let mainPageHide = document.querySelector(".mainHide")
 let temp = document.querySelector(".temp")
+let tryAgainBtn = document.createElement('button')
+let mainBtn = document.createElement('button')
 let resultStore = "";
 let player = "1";
+let container = document.querySelector('#container')
 
-const buttonCreated = () => {
-    var tryAgainBtn = document.createElement('button')
+const createButton = () => {
     buttonContainer.append(tryAgainBtn)
-    tryAgainBtn.innerText = "START"
+    tryAgainBtn.innerText = "Try again"
     tryAgainBtn.setAttribute("id", "tryAgainBtn")
-    var mainBtn = document.createElement('button')
     buttonContainer.append(mainBtn)
     mainBtn.innerText = "MAIN"
     mainBtn.setAttribute("id", "goBackBtn")
-    
-    mainBtn.addEventListener('click', () => { // main button
-        temp.style.display = 'none'
-        answerBox.style.display = 'none'
-        mainTitle.setAttribute("class", "title")
-        // mainTitle.style.display = 'flex'
-        // mainTitle.style.justifyContent = 'center'
-        // mainTitle.style.margin = 'auto'
-        // mainTitle.style.alignItems = 'center'
-        mainTitle.style.fontSize = '76px'
-        // mainTitle.style.marginTop = '71px'
-        // mainTitle.style.marginBottom = '30px'
-        
-        myName.style.display = 'block'
-        myName.style.marginTop = "35px"
-        startBtn.style.display = 'flex'
-        startBtn.style.float = 'right'
-        startBtn.style.textAlign = 'center'
-
-        rules.style.display = 'block'
-        rules.style.marginTop = '176px'
-
-        example.style.display = 'flex'
-        example.style.marginTop = '20px'
-        
-        console.log("clicked");
-        firstStartBtn()
-    })
 }
 
-const styleChange = () => {
+const goBackToMain = () => {
+    window.location.href = "index.html"
+}
+
+// 3 2 1 start
+const ChangeInGameStylePage = () => {
+    createButton()
+
     startBtn.style.display = 'none'
     rules.style.display = 'none'
     example.style.display = 'none'
@@ -62,7 +42,6 @@ const styleChange = () => {
     gameTitleContainer.style.display = "inline"
     gameTitleContainer.style.textAlign = "end"
     
-    buttonCreated()
     var display = document.createElement('p')
     resultDisplay.append(display)
     display.setAttribute("id", "display")
@@ -78,8 +57,9 @@ const styleChange = () => {
     typeArea.setAttribute("type", "text", "placeholder", "ARE YOU READY?")
     typeArea.setAttribute("class", "typeArea", "id", "clear")   
     timeOut()
-    tryAgain()
+    //tryAgain()
 }
+
 const timeOut = () => {
     typeArea.setAttribute("disabled", "disabled")
     if (typeArea.placeholder = "ARE YOU READY?") {
@@ -95,7 +75,7 @@ const timeOut = () => {
 const resultNum = () => {
     for (let i=0; i < (typeArea.value.length) - 1; i++) {
         if (resultStore[i] != typeArea.value[i]) {
-            display.innerText = `WRONG NUMBERS... \nPlayer ${player} you lost! click 'START' to play again`
+            display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
             typeArea.setAttribute("disabled", "disabled")
             return
         } 
@@ -109,34 +89,36 @@ const resultNum = () => {
     }
     typeArea.value = "";
     display.innerText = `CORRECT! player${player} It's your turn`
+    console.log(resultStore.length);
+    console.log(typeArea.value.length);
 }
-
-typeArea.addEventListener('keyup', (event) => {
-    if (event.key === "Enter") {
-        resultNum()
-        // let timeBar = document.querySelector("#timeBar")
-        
-    }
-})
 
 const firstStartBtn = () => {
-    startBtn.addEventListener('click', () => {  // first page start button
-        answerBox.style.display = "block"
-        styleChange()
-        setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
-    })
-}
-firstStartBtn()
-
-const tryAgain = () => { //start button
-    tryAgainBtn.addEventListener('click', () => {
-        typeArea.removeAttribute("disabled", "disabled")
-        display.innerText = "";
-        timeOut()
-        setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
-        typeArea.value = "";
-        resultStore = "";
-    })
+    answerBox.style.display = "block"
+    ChangeInGameStylePage()
+    setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
 }
 
 
+const playerEnter = (event) => {
+    if (event.key === "Enter") {
+        resultNum()        
+    }
+}
+
+const tryAgain = () => { 
+    typeArea.removeAttribute("disabled", "disabled")
+    display.innerText = "";
+    timeOut();
+    setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
+    typeArea.value = "";
+    resultStore = "";
+}
+
+typeArea.addEventListener('keyup', playerEnter);
+
+mainBtn.addEventListener('click', goBackToMain);
+
+startBtn.addEventListener('click', firstStartBtn);
+
+tryAgainBtn.addEventListener('click', tryAgain);
