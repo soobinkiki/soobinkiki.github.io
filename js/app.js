@@ -9,6 +9,7 @@ let answerBox = document.querySelector("#answer-Box")
 let typeArea = document.createElement('input')
 let resultDisplay = document.querySelector(".resultDisplay")
 let mainPageHide = document.querySelector(".mainHide")
+let temp = document.querySelector(".temp")
 let resultStore = "";
 let player = "1";
 
@@ -21,18 +22,34 @@ const buttonCreated = () => {
     buttonContainer.append(mainBtn)
     mainBtn.innerText = "MAIN"
     mainBtn.setAttribute("id", "goBackBtn")
-
-    // mainBtn.addEventListener('click', () => { // main button
-    //     let hide = document.querySelector(".hide")
-    //     let temp = document.querySelector(".temp")
+    
+    mainBtn.addEventListener('click', () => { // main button
+        temp.style.display = 'none'
+        answerBox.style.display = 'none'
+        mainTitle.setAttribute("class", "title")
+        // mainTitle.style.display = 'flex'
+        // mainTitle.style.justifyContent = 'center'
+        // mainTitle.style.margin = 'auto'
+        // mainTitle.style.alignItems = 'center'
+        mainTitle.style.fontSize = '76px'
+        // mainTitle.style.marginTop = '71px'
+        // mainTitle.style.marginBottom = '30px'
         
-    //     hide.style.display = "none"
-    //     answerBox.style.display = "none"
-    //     // startBtn.style.display = 'block'
-    //     rules.style.display = 'block'
-    //     temp.style.display = 'block'
-    //     console.log("clicked");
-    // })
+        myName.style.display = 'block'
+        myName.style.marginTop = "35px"
+        startBtn.style.display = 'flex'
+        startBtn.style.float = 'right'
+        startBtn.style.textAlign = 'center'
+
+        rules.style.display = 'block'
+        rules.style.marginTop = '176px'
+
+        example.style.display = 'flex'
+        example.style.marginTop = '20px'
+        
+        console.log("clicked");
+        firstStartBtn()
+    })
 }
 
 const styleChange = () => {
@@ -78,7 +95,7 @@ const timeOut = () => {
 const resultNum = () => {
     for (let i=0; i < (typeArea.value.length) - 1; i++) {
         if (resultStore[i] != typeArea.value[i]) {
-            display.innerText = `WRONG NUMBERS! \nPlayer ${player} you lost! click 'START' to play again`
+            display.innerText = `WRONG NUMBERS... \nPlayer ${player} you lost! click 'START' to play again`
             typeArea.setAttribute("disabled", "disabled")
             return
         } 
@@ -102,11 +119,14 @@ typeArea.addEventListener('keyup', (event) => {
     }
 })
 
-startBtn.addEventListener('click', () => {  // first page start button
-    answerBox.style.display = "block"
-    styleChange()
-    setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
-})
+const firstStartBtn = () => {
+    startBtn.addEventListener('click', () => {  // first page start button
+        answerBox.style.display = "block"
+        styleChange()
+        setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
+    })
+}
+firstStartBtn()
 
 const tryAgain = () => { //start button
     tryAgainBtn.addEventListener('click', () => {

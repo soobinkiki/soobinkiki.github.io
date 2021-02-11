@@ -61,6 +61,14 @@ p {
     padding: 40px;
     margin-right: 100px; 
 }
+.title {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    margin-top: 71px;
+    margin-bottom: 30px;
+}
 .madeBy {
     position: flex;
     margin-top: 35px;
@@ -103,6 +111,7 @@ input::placeholder {
     margin-top: 48px;
     margin-bottom: 50px;
 }
+
 #answer-Box {
     margin-top: 30px;
     background: black;

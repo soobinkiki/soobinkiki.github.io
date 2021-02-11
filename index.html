@@ -10,38 +10,46 @@
 </head>
 <body>
     <div id="container">
-        <div id="gameTitleContainer">
-            <h1 id="mainTitle">Numbers Memory Game</h1>
-        </div>
-        <div class="hide">
-            <div id="menuButtons"></div>
-            <div class="resultDisplay"></div>
+        
+            <div id="gameTitleContainer">
+                <h1 id="mainTitle">Numbers Memory Game</h1>
+            </div>
+        <div class="temp">
+            <div class="temp">
+                <div id="menuButtons"></div>
+                <div class="resultDisplay"></div>
+            </div>
         </div>   
-        <div id="rules">
-            <h2>HOW TO PLAY</h2>
-            <ul>
-                <li>This is a turn-based game. Both players will type one of the random numbers between 0 to 9 at each turn</li>
-                <li>The first player types one random number and the next player must remember the previously typed number plus another number of your choice</li>
-                <li>Type the numbers and HIT ENTER!</li>
-            </ul>
-        </div>
-        <div class="temp" id="example">
-            <div>
-                <h2>EXAMPLE (at each turn)</h2>
-                <p>Player1 types 0</p>
-                <p>Player2 types 09</p>   
-                <p>Player1 types 096</p>   
-                <p>Player2 types 0962</p>
+            <div id="rules">
+                <h2>HOW TO PLAY</h2>
+                <ul>
+                    <li>This is a turn-based game. Both players will type one of the random numbers between 0 to 9 at each turn</li>
+                    <li>The first player types one random number and the next player must remember the previously typed number plus another number of your choice</li>
+                    <li>Type the numbers and HIT ENTER!</li>
+                </ul>
             </div>
-            <div>
-                <button id="startBtn">START</button>
+            <div id="example">
+                <div>
+                    <h2>EXAMPLE (at each turn)</h2>
+                    <p>Player1 types 0</p>
+                    <p>Player2 types 09</p>   
+                    <p>Player1 types 096</p>   
+                    <p>Player2 types 0962</p>
+                </div>
+                <div>
+                    <button id="startBtn">START</button>
+                </div>
             </div>
-        </div>
-        <div class="hide">
-            <div id="answer-Box" style="display: none;"></div>
-            <div id="timeBar"></div>
+        
+
+        <div class="temp">
+            <div>
+                <div id="answer-Box" style="display: none"></div>
+                <div id="timeBar"></div>
+            </div>  
         </div>        
-            <div class="madeBy">made by Justin Park</div>          
+            <div class="madeBy">made by Justin Park</div>
+        
     </div>
 </body>
 </html>
