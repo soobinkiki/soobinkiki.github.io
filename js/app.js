@@ -80,8 +80,14 @@ const resultNum = () => {
             return
         } 
     }
-    resultStore = typeArea.value
 
+    if (typeArea.value.length != resultStore.length + 1) {
+        display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
+        return
+    }
+
+    resultStore = typeArea.value
+    
     if (player === "2") {
         player = "1"
     } else if (player === "1") {
@@ -89,8 +95,6 @@ const resultNum = () => {
     }
     typeArea.value = "";
     display.innerText = `CORRECT! player${player} It's your turn`
-    console.log(resultStore.length);
-    console.log(typeArea.value.length);
 }
 
 const firstStartBtn = () => {
@@ -122,3 +126,7 @@ mainBtn.addEventListener('click', goBackToMain);
 startBtn.addEventListener('click', firstStartBtn);
 
 tryAgainBtn.addEventListener('click', tryAgain);
+
+
+
+
