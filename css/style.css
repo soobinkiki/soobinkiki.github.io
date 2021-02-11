@@ -11,7 +11,7 @@ body {
     align-items: center;
 }
 #container {
-    border: 1px solid black;
+    border: 5px solid black;
     box-shadow: 0 0 5px 5px #2a2929;
     background-color: rgba(221, 231, 240, 0.688);
     background-size: cover;
