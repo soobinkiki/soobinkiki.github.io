@@ -12,13 +12,13 @@ let mainPageHide = document.querySelector(".mainHide")
 let temp = document.querySelector(".temp")
 let tryAgainBtn = document.createElement('button')
 let mainBtn = document.createElement('button')
+let container = document.querySelector('#container')
 let resultStore = "";
 let player = "1";
-let container = document.querySelector('#container')
 
 const createButton = () => {
     buttonContainer.append(tryAgainBtn)
-    tryAgainBtn.innerText = "Try again"
+    tryAgainBtn.innerText = "TRY AGAIN"
     tryAgainBtn.setAttribute("id", "tryAgainBtn")
     buttonContainer.append(mainBtn)
     mainBtn.innerText = "MAIN"
@@ -29,7 +29,6 @@ const goBackToMain = () => {
     window.location.href = "index.html"
 }
 
-// 3 2 1 start
 const ChangeInGameStylePage = () => {
     createButton()
 
@@ -48,7 +47,8 @@ const ChangeInGameStylePage = () => {
     display.innerText = "";
     
     let timeRemaining = document.createElement("div")
-    timeRemaining.setAttribute("class", "timer")
+    timeRemaining.classList.add("timer")
+    timeRemaining.classList.add("timerDelay")
     resultDisplay.append(timeRemaining)
     answerBox.append(typeArea)
     
@@ -57,7 +57,7 @@ const ChangeInGameStylePage = () => {
     typeArea.setAttribute("type", "text", "placeholder", "ARE YOU READY?")
     typeArea.setAttribute("class", "typeArea", "id", "clear")   
     timeOut()
-    //tryAgain()
+    tryAgain()
 }
 
 const timeOut = () => {
@@ -77,16 +77,24 @@ const resultNum = () => {
         if (resultStore[i] != typeArea.value[i]) {
             display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
             typeArea.setAttribute("disabled", "disabled")
+            let timeRemaining = document.createElement("div")
+            let timerWithDuration = document.querySelector(".timer")
+            timerWithDuration.remove()
+            timeRemaining.classList.add("timer")
+            resultDisplay.append(timeRemaining)
+            timerWithDuration.style.removeProperty(animationDuration)
             return
         } 
     }
 
     if (typeArea.value.length != resultStore.length + 1) {
         display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
+        typeArea.setAttribute("disabled", "disabled")
         return
     }
 
     resultStore = typeArea.value
+    
     
     if (player === "2") {
         player = "1"
@@ -95,25 +103,38 @@ const resultNum = () => {
     }
     typeArea.value = "";
     display.innerText = `CORRECT! player${player} It's your turn`
+    
+    if(resultStore.length === 0) {
+        console.log("wrong");
+        return
+    }
+
 }
 
 const firstStartBtn = () => {
     answerBox.style.display = "block"
     ChangeInGameStylePage()
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
+   
+    // setTimeout( () => {typeArea.setAttribute("disabled", "disabled")}, 11999)
+    // setTimeout( () => {typeArea.placeholder = "TRY AGAIN"}, 11999)
 }
 
-
 const playerEnter = (event) => {
+
     if (event.key === "Enter") {
-        resultNum()        
+        document.querySelector(".timer").remove()
+        let timeRemaining = document.createElement("div")
+        timeRemaining.classList.add("timer")
+        resultDisplay.append(timeRemaining)
+        resultNum()
     }
 }
 
 const tryAgain = () => { 
     typeArea.removeAttribute("disabled", "disabled")
     display.innerText = "";
-    timeOut();
+    timeOut()
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
     typeArea.value = "";
     resultStore = "";

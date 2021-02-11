@@ -121,7 +121,7 @@ input::placeholder {
 
 .timer {
     height: 15px;
-    width: 1080px;
+    width: 800px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -129,11 +129,16 @@ input::placeholder {
     background: linear-gradient(to bottom, rgb(64, 255, 0), rgb(24, 24, 24));
     animation-name: timer;
     animation-duration: 6s;
+}
+.timerDelay {
     animation-delay: 6s;
 }
 @keyframes timer {
     from {
-        width: 90%;
+        width: 66%;
+    }
+    50% {
+        color: orange;
     }
     to {
         width: 0%;
