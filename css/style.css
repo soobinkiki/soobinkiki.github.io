@@ -1,8 +1,10 @@
 html {
     height: 100%;
-    background-image: url("../images/Main_background.jpg");
+    background-image: url("../images/main_background.jpg");
     background-size: cover;
     background-repeat: none;
+    background-position-x: -50px;
+    background-position-y: -200px;
 }
 body {
     min-height: 100%;
@@ -13,7 +15,7 @@ body {
 #container {
     border: 5px solid black;
     box-shadow: 0 0 5px 5px #2a2929;
-    background-color: rgba(221, 231, 240, 0.688);
+    background-color: rgba(255, 255, 255, 0.849);
     background-size: cover;
     background-repeat: none;
     width: 1200px;
@@ -55,7 +57,7 @@ p {
     font-size: 25px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.229);
-    border: none;
+    border: 1px solid rgb(60, 59, 59);
     border-radius: 75px;
     width: 150px;
     height: 150px;
@@ -100,10 +102,10 @@ input::placeholder {
     font-size: 85px;
     width: 1000px;
     margin: 6% 0 0 7.5%;
-    background: rgba(0, 0, 0, 0.818);
+    background: rgba(0, 0, 0, 0);
     color: white;
     text-align: center;
-    border: 1px solid black;
+    border: none;
     outline: none;
 }
 
