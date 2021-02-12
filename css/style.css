@@ -1,6 +1,6 @@
 html {
     height: 100%;
-    background-image: url("../images/main_background.jpg");
+    /* background-image: url("../images/main_background.jpg"); */
     background-size: cover;
     background-repeat: repeat;
     background-position-x: -50px;
@@ -47,6 +47,7 @@ body {
     margin: auto;
     position: relative;
 }
+
 #gameTitleContainer {
     font-size: 38px;
     margin-top: 95px;
@@ -54,29 +55,35 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .hideBtn {
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
 }
+
 #rules {
     margin-top: 55px;
     margin-left: 50px;
 }
+
 #example {
     margin-top: 20px;
     margin-left: 50px;
     display: flex;
     justify-content: space-between;
 }
+
 h2 {
     font-size: 30px;
 }
+
 p {
     margin: 0px;
     margin-left: 40px;
     padding: 0;
 }
+
 #startBtn {
     font-size: 25px;
     cursor: pointer;
@@ -94,10 +101,12 @@ p {
     box-shadow: 1px 1px 40px 1px #000000;
     transition: 0.4s;
 }
+
 #startBtn:hover {
     background: rgba(211, 211, 211, 0.399);
     transform: scale(1.07);
 }
+
 .title {
     display: flex;
     justify-content: center;
@@ -106,12 +115,14 @@ p {
     margin-top: 71px;
     margin-bottom: 30px;
 }
+
 .madeBy {
     position: flex;
     margin-top: 35px;
     margin-right: 20px;
     text-align: right;
 }
+
 input::placeholder {
     color: white;
     opacity: 0.75;
@@ -124,6 +135,7 @@ input::placeholder {
     border-radius: 6px;
     background: linear-gradient(to right bottom, #191b21, #b6c3c2);
 }
+
 #goBackBtn {
     background: white;
     cursor: pointer;
@@ -131,6 +143,7 @@ input::placeholder {
     border-radius: 6px;
     background: linear-gradient(to right bottom, #191b21, #b6c3c2);
 }
+
 .typeArea {
     font-size: 85px;
     width: 1000px;
