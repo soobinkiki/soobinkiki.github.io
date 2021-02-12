@@ -15,7 +15,10 @@
             </div>
         <div>
             <div>
-                <div id="menuButtons"></div>
+                <div id="menuButtons">
+                    <button id="tryAgainBtn">TRY AGAIN</button>
+                    <button id="goBackBtn">MAIN</button>
+                </div>
                 <div class="resultDisplay"></div>
             </div>
         </div>   
@@ -40,13 +43,18 @@
                 </div>
             </div>
         <div>
-            <div id="answer-Box" style="display: none"></div>
+            <div id="answer-Box" style="display: none">
+        </div>
         </div>        
-            <div class="madeBy"><strong>&copy; 2021 by Justin Park</strong></div>
-
-        <audio id="buttonSound">
-            <source src="sounds/button_sound.mp3"></source>
-        </audio>
+            <div class="madeBy"><strong>&copy; 2021 by Justin Park</strong>
+        </div>
+        
+        <audio id="buttonSound" src="./sounds/button_sound.mp3"></audio>
+        <div id="bgmContainer">
+            <audio id="bgmMusic" src="./sounds/background_music.mp3" type="audio/mpeg"></audio>
+            <button class="bgmBtn" id="bgmBtnPlay">Play &#9658;</button>
+            <button class="bgmBtn" id="bgmBtnStop">Stop &#9611;</button>
+        </div>
     </div>
 </body>
 </html>

@@ -6,6 +6,30 @@ html {
     background-position-x: -50px;
     background-position-y: -200px;
 }
+
+#bgmContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 25px;
+}
+
+.bgmBtn {
+    font-size: 15px;
+    cursor: pointer;
+    background: linear-gradient(to right bottom, #191b21, #b6c3c2);
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    min-width: 100px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+#bgmBtnStop {
+    margin-left: 10px;
+}
+
 body {
     min-height: 100%;
     display: flex;
@@ -25,18 +49,18 @@ body {
 }
 #gameTitleContainer {
     font-size: 38px;
-    margin-top: 20px;
+    margin-top: 95px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#menuButtons {
+.hideBtn {
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
 }
 #rules {
-    margin-top: 125px;
+    margin-top: 55px;
     margin-left: 50px;
 }
 #example {
@@ -58,20 +82,20 @@ p {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.229);
     border: 1px solid rgb(60, 59, 59);
-    border-radius: 75px;
-    width: 150px;
-    height: 150px;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(30, 31, 30);
     -webkit-text-stroke: 1px rgb(0, 0, 0);
-    padding: 40px;
-    margin-right: 100px; 
+    margin-right: 100px;
+    box-shadow: 1px 1px 40px 1px #000000;
     transition: 0.4s;
 }
 #startBtn:hover {
-    background: rgba(104, 102, 102, 0.399);
+    background: rgba(211, 211, 211, 0.399);
     transform: scale(1.07);
 }
 .title {
@@ -95,13 +119,17 @@ input::placeholder {
 #tryAgainBtn {
     margin-right: 15px;
     background: white;
+    color: white;
     cursor: pointer;
     border-radius: 6px;
+    background: linear-gradient(to right bottom, #191b21, #b6c3c2);
 }
 #goBackBtn {
     background: white;
     cursor: pointer;
+    color: white;
     border-radius: 6px;
+    background: linear-gradient(to right bottom, #191b21, #b6c3c2);
 }
 .typeArea {
     font-size: 85px;
@@ -139,10 +167,9 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, rgb(75, 208, 31), rgb(24, 24, 24));
+    background: linear-gradient(to bottom, rgb(82, 169, 53), rgb(24, 24, 24));
     animation-name: timer;
     animation-duration: 10s;
-
 }
 
 .timerDelay {
@@ -154,13 +181,13 @@ input::placeholder {
         width: 66%;
     }
     60% {
-        background: linear-gradient(to bottom, rgb(199, 240, 33), rgb(24, 24, 24));
+        background: linear-gradient(to bottom, rgb(109, 130, 47), rgb(24, 24, 24));
     }
-    70% {
-        background: linear-gradient(to bottom, rgb(249, 169, 22), rgb(24, 24, 24));
+    65% {
+        background: linear-gradient(to bottom, rgb(172, 126, 39), rgb(24, 24, 24));
     }
     to {
-        background: linear-gradient(to bottom, rgb(255, 59, 45), rgb(24, 24, 24));
+        background: linear-gradient(to bottom, rgb(162, 48, 40), rgb(24, 24, 24));
         width: 0%;
     }
 }

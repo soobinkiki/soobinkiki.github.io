@@ -1,63 +1,50 @@
 let startBtn = document.querySelector("#startBtn")
-let buttonContainer = document.querySelector("#menuButtons")
 let rules = document.querySelector("#rules")
 let example = document.querySelector("#example")
 let myName = document.querySelector(".madeBy")
 let gameTitleContainer = document.querySelector("#gameTitleContainer")
 let mainTitle = document.querySelector("#mainTitle")
-let answerBox = document.querySelector("#answer-Box")
 let typeArea = document.createElement('input')
-let resultDisplay = document.querySelector(".resultDisplay")
 let mainPageHide = document.querySelector(".mainHide")
-let temp = document.querySelector(".temp")
-let tryAgainBtn = document.createElement('button')
-let mainBtn = document.createElement('button')
+let tryAgainBtn = document.getElementById('tryAgainBtn')
+let mainBtn = document.querySelector('#goBackBtn')
 let container = document.querySelector('#container')
+let hideButton = document.querySelector("#menuButtons")
+let timerNoDelay = document.querySelector(".timer")
+let timerYesDelay = document.querySelector(".timerDelay")
+let answerBox = document.querySelector("#answer-Box")
+let resultDisplay = document.querySelector(".resultDisplay")
+var bgmMusic = document.getElementById("bgmMusic")
+var playPauseBtn = document.getElementById("bgmBtnPlay")
+var musicStopBtn = document.getElementById("bgmBtnStop")
+var count = 0;
+let timeRemaining = null
 let resultStore = "";
 let player = "1";
-
-const createButton = () => {
-    buttonContainer.append(tryAgainBtn)
-    tryAgainBtn.innerText = "TRY AGAIN"
-    tryAgainBtn.setAttribute("id", "tryAgainBtn")
-    buttonContainer.append(mainBtn)
-    mainBtn.innerText = "MAIN"
-    mainBtn.setAttribute("id", "goBackBtn")
-}
-
-const goBackToMain = () => {
-    window.location.href = "index.html"
-}
+hideButton.classList.add("hideBtn")
+hideButton.style.display = "none"
 
 const ChangeInGameStylePage = () => {
-    createButton()
-
     startBtn.style.display = 'none'
     rules.style.display = 'none'
     example.style.display = 'none'
-    
     mainTitle.style.fontSize = "20px"
     mainTitle.style.marginRight = "20px"
     gameTitleContainer.style.display = "inline"
     gameTitleContainer.style.textAlign = "end"
-    
     var display = document.createElement('p')
     resultDisplay.append(display)
     display.setAttribute("id", "display")
     display.innerText = "";
-    
-    let timeRemaining = document.createElement("div")
+    timeRemaining = document.createElement("div")
     timeRemaining.classList.add("timer")
     timeRemaining.classList.add("timerDelay")
     resultDisplay.append(timeRemaining)
     answerBox.append(typeArea)
-    
-    myName.style.marginTop = "168px"
-    
+    myName.style.marginTop = "173px"
     typeArea.setAttribute("type", "text", "placeholder", "ARE YOU READY?")
-    typeArea.setAttribute("class", "typeArea", "id", "clear")   
+    typeArea.setAttribute("class", "typeArea", "id", "clear") 
     timeOut()
-    tryAgain()
 }
 
 const timeOut = () => {
@@ -92,7 +79,6 @@ const resultNum = () => {
 
     resultStore = typeArea.value
     
-    
     if (player === "2") {
         player = "1"
     } else if (player === "1") {
@@ -105,27 +91,23 @@ const resultNum = () => {
         console.log("wrong");
         return
     }
-
 }
 
 const firstStartBtn = () => {
     answerBox.style.display = "block"
     ChangeInGameStylePage()
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
-   
-    // setTimeout( () => {typeArea.setAttribute("disabled", "disabled")}, 11999)
-    // setTimeout( () => {typeArea.placeholder = "TRY AGAIN"}, 11999)
+    hideButton.style.display = "flex"
 }
 
-const playerEnter = (event) => {
-
+const playerEnter = (event) => { 
     if (event.key === "Enter") {
         document.querySelector(".timer").remove()
         let timeRemaining = document.createElement("div")
         timeRemaining.classList.add("timer")
         resultDisplay.append(timeRemaining)
         resultNum()
-    }
+    } 
 }
 
 const tryAgain = () => { 
@@ -135,20 +117,45 @@ const tryAgain = () => {
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
     typeArea.value = "";
     resultStore = "";
+    document.querySelector(".timer").remove()
+    timeRemaining = document.createElement("div")
+    timeRemaining.classList.add("timer")
+    timeRemaining.classList.add("timerDelay")
+    resultDisplay.append(timeRemaining)
 }
 
-
-
+const goBackToMain = () => {
+    window.location.href = "index.html"
+}
 
 const buttonSound = () => {
     var buttonSound = document.getElementById("buttonSound")
     buttonSound.play()
 }
 
+const playPause = () => {
+    if (count === 0) {
+        count = 1;
+        bgmMusic.play();
+        playPauseBtn.innerHTML = "Pause &#9208;";
+    } else {
+        count = 0;
+        bgmMusic.pause()
+        playPauseBtn.innerHTML = "Play &#9658;";
+    }
+}
+const stop = () => {
+    playPause()
+    bgmMusic.pause()
+    bgmMusic.currentTime = 0;
+    playPauseBtn.innerHTML = "Play &#9658;"
+}
+
 typeArea.addEventListener('keyup', playerEnter);
-
 mainBtn.addEventListener('click', goBackToMain);
+mainBtn.addEventListener('click', buttonSound); 
 tryAgainBtn.addEventListener('click', tryAgain);
-
 startBtn.addEventListener('click', firstStartBtn);
 startBtn.addEventListener('click', buttonSound);
+playPauseBtn.addEventListener('click', playPause)
+musicStopBtn.addEventListener('click', stop)
