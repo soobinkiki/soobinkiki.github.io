@@ -18,7 +18,7 @@ var bgmMusic = document.getElementById("bgmMusic")
 var playPauseBtn = document.getElementById("bgmBtnPlay")
 var musicStopBtn = document.getElementById("bgmBtnStop")
 var count = 0;
-let timeRemaining = null
+let timeRemaining = null;
 let resultStore = "";
 let player = "1";
 hideButton.classList.add("hideBtn")
