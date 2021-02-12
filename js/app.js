@@ -52,7 +52,7 @@ const ChangeInGameStylePage = () => {
     resultDisplay.append(timeRemaining)
     answerBox.append(typeArea)
     
-    myName.style.marginTop = "173px"
+    myName.style.marginTop = "168px"
     
     typeArea.setAttribute("type", "text", "placeholder", "ARE YOU READY?")
     typeArea.setAttribute("class", "typeArea", "id", "clear")   
@@ -137,14 +137,18 @@ const tryAgain = () => {
     resultStore = "";
 }
 
+
+
+
+const buttonSound = () => {
+    var buttonSound = document.getElementById("buttonSound")
+    buttonSound.play()
+}
+
 typeArea.addEventListener('keyup', playerEnter);
 
 mainBtn.addEventListener('click', goBackToMain);
-
-startBtn.addEventListener('click', firstStartBtn);
-
 tryAgainBtn.addEventListener('click', tryAgain);
 
-
-
-
+startBtn.addEventListener('click', firstStartBtn);
+startBtn.addEventListener('click', buttonSound);
