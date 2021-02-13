@@ -22,11 +22,11 @@ var wrongSound = document.getElementById("wrongSound")
 var countdownSound = document.getElementById("countdownSound")
 var startbuttonSound = document.getElementById("buttonSound")
 var countdownSoundStart = document.getElementById("countdownStart")
-
 var count = 0;
 let timeRemaining = null;
 let resultStore = "";
 let player = "1";
+let temp = "0";
 hideButton.classList.add("hideBtn")
 hideButton.style.display = "none"
 
@@ -83,17 +83,6 @@ const resultNum = () => {
         wrongSoundEffect()
         return
     } 
-//////////////////////////////////////////////////////
-    // for (let i=0; i <= typeArea.value.length; i++) {
-    //     if (typeArea.value.length[i] === typeArea.value.length[i-1]) {
-    //         display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
-    //         typeArea.setAttribute("disabled", "disabled")
-    //         wrongSoundEffect()
-    //         return
-    //     }
-    // }
-
-//////////////////////////////////////////////////////
 
     resultStore = typeArea.value
 
@@ -102,17 +91,24 @@ const resultNum = () => {
     } else if (player === "1") {
         player = "2"
     }
+
+    
+
     typeArea.value = "";
     display.innerText = `CORRECT! player${player} It's your turn`
     correctSoundEffect()
 
-    
 }
 
 const firstStartBtn = () => {
     answerBox.style.display = "block"
     ChangeInGameStylePage()
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
+    setTimeout( () => {if (player = "1") {
+        display.innerText = `Time is up! please type numbers. Try again!`
+        wrongSoundEffect()
+        typeArea.setAttribute("disabled", "disabled")
+    }}, 16000)
     hideButton.style.display = "flex"
 }
 
@@ -131,6 +127,11 @@ const tryAgain = () => {
     display.innerText = "";
     timeOut()
     setTimeout( () => {display.innerText = "Player 1 It's your turn"}, 6000)
+    setTimeout( () => {if (player = "1") {
+        display.innerText = `Time is up! please type numbers. Try again!`
+        wrongSoundEffect()
+        typeArea.setAttribute("disabled", "disabled")
+    }}, 16000)
     typeArea.value = "";
     resultStore = "";
     document.querySelector(".timer").remove()
