@@ -26,6 +26,10 @@ html {
     margin-top: 10px;
 }
 
+.bgmBtn:hover {
+    transform: scale(1.1)
+}
+
 #bgmBtnStop {
     margin-left: 10px;
 }
@@ -135,6 +139,9 @@ input::placeholder {
     border-radius: 6px;
     background: linear-gradient(to right bottom, #191b21, #b6c3c2);
 }
+#tryAgainBtn:hover {
+    transform: scale(1.2)
+}
 
 #goBackBtn {
     background: white;
@@ -142,6 +149,9 @@ input::placeholder {
     color: white;
     border-radius: 6px;
     background: linear-gradient(to right bottom, #191b21, #b6c3c2);
+}
+#goBackBtn:hover {
+    transform: scale(1.2)
 }
 
 .typeArea {

@@ -17,6 +17,12 @@ let resultDisplay = document.querySelector(".resultDisplay")
 var bgmMusic = document.getElementById("bgmMusic")
 var playPauseBtn = document.getElementById("bgmBtnPlay")
 var musicStopBtn = document.getElementById("bgmBtnStop")
+var correctSound = document.getElementById("correctSound")
+var wrongSound = document.getElementById("wrongSound")
+var countdownSound = document.getElementById("countdownSound")
+var startbuttonSound = document.getElementById("buttonSound")
+var countdownSoundStart = document.getElementById("countdownStart")
+
 var count = 0;
 let timeRemaining = null;
 let resultStore = "";
@@ -41,7 +47,7 @@ const ChangeInGameStylePage = () => {
     timeRemaining.classList.add("timerDelay")
     resultDisplay.append(timeRemaining)
     answerBox.append(typeArea)
-    myName.style.marginTop = "173px"
+    myName.style.marginTop = "176px"
     typeArea.setAttribute("type", "text", "placeholder", "ARE YOU READY?")
     typeArea.setAttribute("class", "typeArea", "id", "clear") 
     timeOut()
@@ -50,10 +56,10 @@ const ChangeInGameStylePage = () => {
 const timeOut = () => {
     typeArea.setAttribute("disabled", "disabled")
     if (typeArea.placeholder = "ARE YOU READY?") {
-        setTimeout( () => {typeArea.placeholder = "3"}, 2000);
-        setTimeout( () => {typeArea.placeholder = "2"}, 3000);
-        setTimeout( () => {typeArea.placeholder = "1"}, 4000);
-        setTimeout( () => {typeArea.placeholder = "START"}, 5000);
+        setTimeout( () => {typeArea.placeholder = "3"; countdownSoundEffect()}, 2000);
+        setTimeout( () => {typeArea.placeholder = "2"; countdownSoundEffect()}, 3000);
+        setTimeout( () => {typeArea.placeholder = "1"; countdownSoundEffect()}, 4000);
+        setTimeout( () => {typeArea.placeholder = "START"; countdownSoundStartEffect()}, 5000);
         setTimeout( () => {typeArea.placeholder = "PLEASE ENTER"}, 6000);
         setTimeout( () => {typeArea.removeAttribute("disabled", "disabled")}, 6000);
     }
@@ -67,18 +73,30 @@ const resultNum = () => {
             let timeRemaining = document.createElement("div")
             resultDisplay.append(timeRemaining)
             document.querySelector(".timer").style.animationDuration = "0s"
+            wrongSoundEffect()
             return
         } 
     }
-
     if (typeArea.value.length != resultStore.length + 1) {
         display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
         typeArea.setAttribute("disabled", "disabled")
+        wrongSoundEffect()
         return
-    }
+    } 
+//////////////////////////////////////////////////////
+    // for (let i=0; i <= typeArea.value.length; i++) {
+    //     if (typeArea.value.length[i] === typeArea.value.length[i-1]) {
+    //         display.innerText = `WRONG NUMBERS… \nPlayer ${player} you lost! click 'START' to play again`
+    //         typeArea.setAttribute("disabled", "disabled")
+    //         wrongSoundEffect()
+    //         return
+    //     }
+    // }
+
+//////////////////////////////////////////////////////
 
     resultStore = typeArea.value
-    
+
     if (player === "2") {
         player = "1"
     } else if (player === "1") {
@@ -86,11 +104,9 @@ const resultNum = () => {
     }
     typeArea.value = "";
     display.innerText = `CORRECT! player${player} It's your turn`
+    correctSoundEffect()
+
     
-    if(resultStore.length === 0) {
-        console.log("wrong");
-        return
-    }
 }
 
 const firstStartBtn = () => {
@@ -129,9 +145,36 @@ const goBackToMain = () => {
 }
 
 const buttonSound = () => {
-    var buttonSound = document.getElementById("buttonSound")
-    buttonSound.play()
+    startbuttonSound.play()
 }
+
+const countdownSoundEffect = () => {
+    countdownSound.play()
+}
+const countdownSoundStartEffect = () => {
+    countdownSoundStart.play()
+}
+
+const correctSoundEffect = () => {
+    correctSound.play()
+    return
+}
+const wrongSoundEffect = () => {
+    wrongSound.play()
+    return
+}
+
+// const autoPlay = () => {
+//     setTimeout( () => {playPauseBtn.trigger("click")}, 200)
+// }
+
+// bgmMusic.addEventListener('DOMContentLoaded', autoPlay)
+
+
+
+// window.onload = () => {
+//     playPauseBtn.click()
+// }
 
 const playPause = () => {
     if (count === 0) {
@@ -151,10 +194,12 @@ const stop = () => {
     playPauseBtn.innerHTML = "Play &#9658;"
 }
 
+
 typeArea.addEventListener('keyup', playerEnter);
 mainBtn.addEventListener('click', goBackToMain);
 mainBtn.addEventListener('click', buttonSound); 
 tryAgainBtn.addEventListener('click', tryAgain);
+tryAgainBtn.addEventListener('click', buttonSound);
 startBtn.addEventListener('click', firstStartBtn);
 startBtn.addEventListener('click', buttonSound);
 playPauseBtn.addEventListener('click', playPause)
