@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Ranchers&family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Acme&family=Ranchers&family=Reggae+One&display=swap');
 html {
     height: 100%;
     background-image: url("../images/main_background.jpg");
@@ -5,6 +8,36 @@ html {
     background-repeat: repeat;
     background-position-x: -50px;
     background-position-y: -200px;
+}
+
+#mainTitle {
+    font-family: 'Acme', sans-serif;
+    color: linear-gradient(to top, #f2f2f2, #ff0000);
+}
+
+h2 {
+    font-size: 30px;
+    font-family: 'Ranchers', cursive;
+}
+
+li {
+    list-style-type: square;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    margin-left: 40px;
+    padding: 0;
+}
+
+p:last-child {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 #bgmContainer {
@@ -67,29 +100,20 @@ body {
 }
 
 #rules {
-    margin-top: 55px;
+    margin-top: 40px;
     margin-left: 50px;
 }
 
 #example {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 50px;
     display: flex;
     justify-content: space-between;
 }
 
-h2 {
-    font-size: 30px;
-}
-
-p {
-    margin: 0px;
-    margin-left: 40px;
-    padding: 0;
-}
-
 #startBtn {
     font-size: 25px;
+    font-family: 'Acme', sans-serif;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.229);
     border: 1px solid rgb(60, 59, 59);
@@ -101,14 +125,23 @@ p {
     align-items: center;
     color: rgb(30, 31, 30);
     -webkit-text-stroke: 1px rgb(0, 0, 0);
+    margin-top: 20px;
     margin-right: 100px;
     box-shadow: 1px 1px 40px 1px #000000;
     transition: 0.4s;
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
+    50% {
+        border-color: #ffffff;
+    }
 }
 
 #startBtn:hover {
-    background: rgba(211, 211, 211, 0.399);
+    background: rgb(211, 211, 211);
     transform: scale(1.07);
+    animation: none;
 }
 
 .title {
@@ -122,7 +155,7 @@ p {
 
 .madeBy {
     position: flex;
-    margin-top: 35px;
+    margin-top: 9px;
     margin-right: 20px;
     text-align: right;
 }
@@ -156,6 +189,7 @@ input::placeholder {
 
 .typeArea {
     font-size: 85px;
+    font-family: Arial, Helvetica, sans-serif;
     width: 1000px;
     margin: 6% 0 0 7.5%;
     background: rgba(0, 0, 0, 0);
@@ -164,11 +198,21 @@ input::placeholder {
     border: none;
     outline: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 #display {
     width: 850px;
     height: 40px;
     font-size: 30px;
+    font-family: 'Abel', sans-serif;
     text-align: center;
     background: rgba(255, 255, 255. 0.01);
     margin: auto;
