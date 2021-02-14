@@ -188,14 +188,7 @@ const wrongSoundEffect = () => {
     return
 }
 
-// const autoPlay = () => {
-//     setTimeout( () => {playPauseBtn.trigger("click")}, 200)
-// }
-
-// bgmMusic.addEventListener('DOMContentLoaded', autoPlay)
-
 const playPause = () => {
-    
     if (count === 0) {
         count = 1;
         bgmMusic.play();
@@ -218,10 +211,6 @@ const preventChars = (event) => {
         event.preventDefault()
     }
 }
-
-// window.onload = () => {
-//     playPauseBtn.click()
-// }
 
 typeArea.addEventListener('keydown', preventChars) 
 typeArea.addEventListener('keyup', playerEnter)
